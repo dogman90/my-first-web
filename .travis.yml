@@ -18,9 +18,9 @@ before_intall:
   - chmod +x gradlew
 
 before_deploy:
-  - zip -r com.changgeol.www
+  - zip -r my-first-web
   - mkdir -p deploy
-  - mv com.changgeol.www.zip deploy/com.changgeol.www.zip
+  - mv my-first-web.zip deploy/my-first-web.zip
 
 deploy:
   - provider: s3
