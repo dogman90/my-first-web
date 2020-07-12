@@ -62,7 +62,7 @@ var main = {
 
         $.ajax({
             type: 'DELETE',
-            url: '/api/v1/posts/' + id,
+            url: '/api/v1/posts/delete/' + id,
         }).done(function() {
             alert('글이 삭제되었습니다.');
             window.location.href = '/';
