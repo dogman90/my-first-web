@@ -20,7 +20,7 @@ before_intall:
 before_deploy:
   - zip -r my-first-web
   - mkdir -p deploy
-  - mv my-first-web.zip deploy/my-first-web.zip
+  - mv com.changgeol.www.zip deploy/com.changgeol.www.zip
 
 deploy:
   - provider: s3
