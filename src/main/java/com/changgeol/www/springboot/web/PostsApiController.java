@@ -31,7 +31,7 @@ public class PostsApiController {
         return postsService.findById(id);
     }
 
-    @DeleteMapping("/api/v1/posts/{id}")
+    @DeleteMapping("/api/v1/posts/delete/{id}")
     public void deleteById(@PathVariable Long id) {
         postsService.deleteById(id);
     }
