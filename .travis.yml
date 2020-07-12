@@ -33,6 +33,17 @@ deploy:
     local_dir: deploy # before_deploy에서 생성한 디렉토리
     wait-until-deployed: true
 
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: my-first-web-build
+    key: my-first-web.zip # 빌드파일 압축해서 전달
+    bundle_type: zip
+    application: my-first-web
+    deployment_group: my-first-web-group
+    region: ap-northeast-2
+    wait-until-deployed: true
+
 # CI 실행 완료 시 메일로 알람
 notifications:
   email:
