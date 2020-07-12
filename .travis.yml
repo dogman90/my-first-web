@@ -18,9 +18,13 @@ before_intall:
   - chmod +x gradlew
 
 before_deploy:
-  - zip -r my-first-web *
-  - mkdir -p deploy
-  - mv my-first-web.zip deploy/my-first-web.zip
+  - mkdir -p before_deploy #zip에 포함할 파일들을 담을 디렉토리 생성
+  - cp scripts/*.sh before-deploy/
+  - cp appspec.yml before-deploy/
+  - cp build/libs/*.jar before_deploy/
+  - cd before-deploy && zip -r before-deploy *
+  - cd ../ && mkdir -p deploy
+  - mv before-deploy/before-deploy.zip deploy/my-first-web.zip
 
 deploy:
   - provider: s3
