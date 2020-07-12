@@ -5,6 +5,7 @@ import com.changgeol.www.springboot.config.auth.dto.SessionUser;
 import com.changgeol.www.springboot.service.posts.PostsService;
 import com.changgeol.www.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +31,10 @@ public class IndexController {
     }
 
     @GetMapping("/posts/save")
-    public String postsSave() {
+    public String postsSave(Model model, @LoginUser SessionUser user) {
+        if(user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "posts-save";
     }
 

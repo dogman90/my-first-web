@@ -1,10 +1,13 @@
 package com.changgeol.www.springboot.web;
 
+import com.changgeol.www.springboot.config.auth.LoginUser;
+import com.changgeol.www.springboot.config.auth.dto.SessionUser;
 import com.changgeol.www.springboot.service.posts.PostsService;
 import com.changgeol.www.springboot.web.dto.PostsResponseDto;
 import com.changgeol.www.springboot.web.dto.PostsSaveRequestDto;
 import com.changgeol.www.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
